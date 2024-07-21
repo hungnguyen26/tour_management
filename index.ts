@@ -1,4 +1,7 @@
 import express, { Express, Request, Response } from "express";
+import sequelize from "./config/database";
+
+sequelize;        
 
 const app: Express = express();
 const port: number = 3000;
