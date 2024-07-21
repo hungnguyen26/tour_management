@@ -1,11 +1,14 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const sequelize = new Sequelize(
-  "tour_manager", // tên database
-  "root", // user name đăng nhập   (mặc định dưới local là "root")
-  "", // mật khẩu đăng nhập   (mặc định dưới local là " ")
+  process.env.DATABASE_NAME, // tên database
+  process.env.DATABASE_USERNAME, // user name đăng nhập   (mặc định dưới local là "root")
+  process.env.DATABASE_PASSWORD, // mật khẩu đăng nhập   (mặc định dưới local là " ")
   {
-    host: "localhost", // link hosting
+    host: process.env.DATABASE_HOST, // link hosting
     dialect: "mysql",
   }
 );
