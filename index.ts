@@ -5,8 +5,8 @@ const app: Express = express();
 const port: number = 3000;
 
 
-app.get("/",(req: Request, res:Response)=>{
-    res.send("trang chủ")
+app.get("/tours",(req: Request, res:Response)=>{
+    res.send("Danh sách tour")
 })
 
 
