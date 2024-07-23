@@ -1,0 +1,16 @@
+extends ../../layout/default.pug
+include ../../mixins/box-head.pug
+block main
+    .containner.my-3 
+        .row    
+            .col-12 
+                +box-head(pageTitle)
+        
+        .row 
+            each item in categorys
+                .col-3.mb-3
+                    div(class="card")
+                        img(src=item.image)
+                        div(class="card-body")
+                            h5(class="card-title") #{item.title}
+                            a(href=`tours/${item.slug}` class="btn btn-primary") Xem chi tiết
